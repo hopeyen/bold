@@ -1,0 +1,8 @@
+query GetInterestRateBracket {
+  interestRateBracket {
+    id
+    rate
+    totalDebt
+    totalTroves
+  }
+}

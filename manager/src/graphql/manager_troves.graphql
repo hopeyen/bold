@@ -1,0 +1,22 @@
+query CollateralAddresses($manager: String!, $first: Int!, $skip: Int!) {
+  collateralAddresses_collection(
+    first: $first, skip: $skip,
+    where: {troveManager: $manager}
+  ) {
+    borrowerOperations
+    troveManager
+    sortedTroves
+    collateral {
+      price
+      totalDebt
+      totalDeposited
+      troves {
+        borrower
+        debt
+        interestRate
+        troveId
+        deposit
+      }
+    }
+  }
+}

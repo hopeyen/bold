@@ -1,0 +1,37 @@
+query GetCollateral($id: ID!) {
+  collateral(id: $id) {
+    id
+    collIndex
+    token {
+      id
+      name
+      symbol
+      decimals
+    }
+    minCollRatio
+    totalDeposited
+    totalDebt
+    price
+    troves {
+      id
+      troveId
+      borrower
+      debt
+      deposit
+      interestRate
+    }
+    addresses {
+      id
+      borrowerOperations
+      sortedTroves
+      stabilityPool
+    }
+    stabilityPoolDeposits {
+      id
+      boldGain
+      collGain
+      deposit
+      depositor
+    }
+  }
+}

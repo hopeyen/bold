@@ -1,0 +1,23 @@
+query GetTroves($first: Int!, $skip: Int!) {
+  troves(first: $first, skip: $skip) {
+    id
+    troveId
+    borrower
+    debt
+    deposit
+    stake
+    interestRate
+    createdAt
+    closedAt
+    collateral {
+      id
+      collIndex
+      token {
+        id
+        name
+        symbol
+        decimals
+      }
+    }
+  }
+}
